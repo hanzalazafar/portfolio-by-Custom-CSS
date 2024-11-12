@@ -12,4 +12,4 @@ const Heading:React.FC<propsType> = ({title}) => {
   )
 }
 
-export default Heading
+export default Heading;
