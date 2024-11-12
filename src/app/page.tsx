@@ -1,9 +1,9 @@
-
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
+'use client';
+import About from '@/components/About';
+import Contact from '@/components/Contact';
+import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
+import Skills from '@/components/Skills';
 
 import AOS from "aos"
 import "aos/dist/aos.css"
@@ -19,7 +19,7 @@ export default function Home() {
       anchorPlacement:"bottom-bottom",
       offset:160,
     });
-    AOS.refresh();
+    AOS.refresh()
   },[]);
   return (
     <main>
