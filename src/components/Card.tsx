@@ -12,12 +12,12 @@ interface propsType {
 const Card: React.FC<propsType> = ({ title, desc, img, tags }) => {
     const [windowWidth, setWindowWidth] = useState<number>(0);
 
-    // Ye effect client-side pe hi chalega
+    // Yeh code client-side pe run hoga jab component mount hoga
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            setWindowWidth(window.innerWidth); // Window ka width client-side par update karenge
+        if (typeof window !== 'undefined') { // Ye check karta hai ke code sirf browser mein chale
+            setWindowWidth(window.innerWidth); // Window ka width set karte hain
         }
-    }, []); // Ye effect sirf initial render ke baad chalega
+    }, []); // Yeh sirf initial render ke baad chalega
 
     return (
         <div className={`card ${windowWidth >= 640 ? 'card-sm' : ''}`} data-aos="zoom-in-up">
@@ -46,3 +46,4 @@ const Card: React.FC<propsType> = ({ title, desc, img, tags }) => {
 };
 
 export default Card;
+
