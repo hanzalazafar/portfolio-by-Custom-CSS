@@ -20,7 +20,9 @@ const Card: React.FC<propsType> = ({ title, desc, img, tags }) => {
   }, []); // Empty dependency array means it runs only once on mount
 
   // If windowWidth is null, render nothing during SSR
-  if (windowWidth === null) return null;
+  if (windowWidth === null) {
+    return null; // This avoids rendering during SSR (when window is not defined)
+  }
 
   return (
     <div className={`card ${windowWidth >= 640 ? 'card-sm' : ''}`} data-aos="zoom-in-up">
